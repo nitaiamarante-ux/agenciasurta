@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>surta marketing — a gente surta pela sua marca</title>
+<meta name="description" content="Agência de marketing com criação de conteúdo UGC, gestão de redes, campanhas e estratégia. A gente surta pra sua marca não passar batida.">
+
+<!-- Open Graph / social -->
+<meta property="og:title" content="surta marketing">
+<meta property="og:description" content="A gente surta pela sua marca. Marketing, UGC e conteúdo que faz barulho.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agenciasurta.com.br">
+<meta property="og:image" content="https://agenciasurta.com.br/assets/logo-selo.png">
+
+<link rel="icon" type="image/png" href="assets/logo-selo.png">
+
+<!-- Fonts: Fraunces (display, orgânica) + DM Sans (texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --musgo:#2f4636;
+  --musgo-esc:#21342a;
+  --terracota:#c25c3a;
+  --terracota-cl:#d2774f;
+  --mostarda:#cf9b3e;
+  --creme:#f2ecdf;
+  --creme-2:#e9e1cf;
+  --creme-3:#ded3bb;
+  --tinta:#22332a;
+  --tinta-suave:#4a5b50;
+  --radius:22px;
+  --maxw:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--creme);
+  color:var(--tinta);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,.display{
+  font-family:'Fraunces',serif;
+  font-optical-sizing:auto;
+  line-height:1.02;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+.eyebrow{
+  font-family:'DM Sans',sans-serif;
+  text-transform:lowercase;
+  letter-spacing:.18em;
+  font-size:.78rem;
+  font-weight:600;
+  color:var(--terracota);
+}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(242,236,223,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--creme-3);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--musgo)}
+.brand img{width:42px;height:42px;border-radius:50%}
+.nav-links{display:flex;gap:30px;align-items:center}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--tinta-suave);transition:color .2s}
+.nav-links a:hover{color:var(--musgo)}
+.btn{
+  display:inline-block;
+  background:var(--musgo);color:var(--creme);
+  padding:12px 24px;border-radius:100px;
+  font-weight:600;font-size:.95rem;
+  transition:transform .15s ease, background .2s;
+  border:none;cursor:pointer;
+}
+.btn:hover{background:var(--musgo-esc);transform:translateY(-2px)}
+.btn-terra{background:var(--terracota)}
+.btn-terra:hover{background:#a8472a}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;color:var(--musgo)}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  padding:84px 0 96px;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+}
+.hero h1{
+  font-size:clamp(2.8rem,6vw,5rem);
+  color:var(--musgo);
+  margin-bottom:22px;
+}
+.hero h1 em{font-style:italic;color:var(--terracota)}
+.hero p.lead{
+  font-size:1.22rem;color:var(--tinta-suave);max-width:30ch;margin-bottom:34px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-art{
+  position:relative;display:flex;justify-content:center;align-items:center;
+}
+.hero-art .blob{
+  position:absolute;inset:-8% -6%;
+  background:radial-gradient(circle at 30% 30%,var(--mostarda),var(--terracota));
+  border-radius:46% 54% 58% 42% / 52% 44% 56% 48%;
+  opacity:.16;filter:blur(8px);
+  animation:morph 14s ease-in-out infinite;
+}
+.hero-art img{
+  position:relative;width:min(420px,90%);border-radius:50%;
+  box-shadow:0 30px 60px -20px rgba(34,51,42,.4);
+}
+@keyframes morph{
+  0%,100%{border-radius:46% 54% 58% 42% / 52% 44% 56% 48%}
+  50%{border-radius:58% 42% 44% 56% / 46% 58% 42% 54%}
+}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.tag{
+  font-size:.82rem;font-weight:600;color:var(--musgo);
+  background:var(--creme-2);border:1px solid var(--creme-3);
+  padding:7px 15px;border-radius:100px;
+}
+
+/* ---------- MARQUEE ---------- */
+.marquee{
+  background:var(--musgo);color:var(--creme);
+  padding:18px 0;overflow:hidden;white-space:nowrap;
+}
+.marquee-track{display:inline-block;animation:scroll 22s linear infinite}
+.marquee span{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;padding:0 28px;opacity:.92}
+.marquee span::after{content:'✦';color:var(--mostarda);margin-left:56px;font-style:normal}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SECTIONS ---------- */
+section{padding:96px 0}
+.section-head{max-width:680px;margin-bottom:54px}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--musgo);margin:14px 0 16px}
+.section-head p{font-size:1.12rem;color:var(--tinta-suave)}
+
+/* manifesto */
+.manifesto{background:var(--creme-2)}
+.manifesto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:14px}
+.pilar{
+  background:var(--creme);border:1px solid var(--creme-3);
+  border-radius:var(--radius);padding:34px 30px;
+}
+.pilar .ico{font-size:1.9rem;margin-bottom:14px}
+.pilar h3{font-size:1.45rem;color:var(--musgo);margin-bottom:10px}
+.pilar p{color:var(--tinta-suave);font-size:1rem}
+
+/* big statement */
+.statement{background:var(--musgo);color:var(--creme);text-align:center}
+.statement p{
+  font-family:'Fraunces',serif;font-weight:500;
+  font-size:clamp(1.7rem,4vw,2.9rem);line-height:1.18;
+  max-width:18ch;margin:0 auto;
+}
+.statement p em{color:var(--mostarda);font-style:italic}
+
+/* services */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.serv{
+  background:var(--creme-2);border:1px solid var(--creme-3);
+  border-radius:var(--radius);padding:38px 34px;
+  position:relative;transition:transform .2s ease,box-shadow .2s ease;
+}
+.serv:hover{transform:translateY(-4px);box-shadow:0 24px 40px -26px rgba(34,51,42,.45)}
+.serv .num{
+  font-family:'Fraunces',serif;font-size:1rem;color:var(--terracota);
+  font-weight:700;letter-spacing:.05em;
+}
+.serv h3{font-size:1.6rem;color:var(--musgo);margin:6px 0 12px}
+.serv p{color:var(--tinta-suave)}
+.serv.destaque{
+  grid-column:1 / -1;
+  background:var(--musgo);color:var(--creme);
+  display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  border-color:var(--musgo);
+}
+.serv.destaque h3{color:var(--creme);font-size:2.1rem}
+.serv.destaque .num{color:var(--mostarda)}
+.serv.destaque p{color:rgba(242,236,223,.82)}
+.ugc-face{
+  background:var(--creme-3);border-radius:18px;aspect-ratio:4/5;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  color:var(--tinta-suave);font-size:.9rem;padding:20px;
+  border:2px dashed var(--creme);
+}
+.ugc-face span{opacity:.7}
+.ugc-stats{display:flex;gap:26px;margin-top:18px;flex-wrap:wrap}
+.ugc-stats div{}
+.ugc-stats b{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--mostarda);display:block}
+.ugc-stats small{color:rgba(242,236,223,.7)}
+
+/* portfolio */
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.port-item{
+  background:var(--creme-2);border:1px solid var(--creme-3);
+  border-radius:var(--radius);aspect-ratio:1/1;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:24px;position:relative;
+  background-image:linear-gradient(160deg,var(--creme-2),var(--creme-3));
+  transition:transform .2s;
+}
+.port-item:nth-child(3n+1){background-image:linear-gradient(160deg,#3a5544,#21342a);color:var(--creme)}
+.port-item:nth-child(3n+2){background-image:linear-gradient(160deg,#d2774f,#b14e2d);color:var(--creme)}
+.port-item:hover{transform:scale(1.02)}
+.port-item small{text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;opacity:.8}
+.port-item h3{font-size:1.35rem;margin-top:4px}
+.port-note{text-align:center;margin-top:24px;color:var(--tinta-suave);font-size:.95rem}
+
+/* depoimentos */
+.depo{background:var(--creme-2)}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card-depo{
+  background:var(--creme);border:1px solid var(--creme-3);
+  border-radius:var(--radius);padding:32px;
+}
+.card-depo .quote{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--mostarda);line-height:0;display:block;height:18px}
+.card-depo p{color:var(--tinta);font-size:1.05rem;margin-bottom:20px;font-style:italic}
+.card-depo .who{display:flex;align-items:center;gap:12px}
+.card-depo .av{width:44px;height:44px;border-radius:50%;background:var(--musgo);color:var(--creme);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Fraunces',serif}
+.card-depo .who b{display:block;color:var(--musgo)}
+.card-depo .who small{color:var(--tinta-suave)}
+
+/* CTA / contato */
+.cta{background:var(--terracota);color:var(--creme);text-align:center}
+.cta h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--creme);margin-bottom:18px}
+.cta p{font-size:1.18rem;max-width:46ch;margin:0 auto 34px;color:rgba(242,236,223,.92)}
+.cta .btn{background:var(--musgo)}
+.cta .btn:hover{background:var(--musgo-esc)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-ghost{background:transparent;border:2px solid var(--creme);color:var(--creme)}
+.btn-ghost:hover{background:var(--creme);color:var(--terracota)}
+
+/* footer */
+footer{background:var(--musgo-esc);color:var(--creme);padding:60px 0 40px}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px}
+.foot-brand{display:flex;align-items:center;gap:14px;font-family:'Fraunces',serif;font-size:1.4rem}
+.foot-brand img{width:54px;height:54px;border-radius:50%}
+.foot-social{display:flex;gap:18px;flex-wrap:wrap}
+.foot-social a{color:rgba(242,236,223,.8);font-weight:500;transition:color .2s}
+.foot-social a:hover{color:var(--mostarda)}
+.foot-bottom{margin-top:44px;padding-top:24px;border-top:1px solid rgba(242,236,223,.15);font-size:.85rem;color:rgba(242,236,223,.6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-cta,.tags{justify-content:center}
+  .hero-art{order:-1}
+  .manifesto-grid,.port-grid,.depo-grid{grid-template-columns:1fr}
+  .serv-grid{grid-template-columns:1fr}
+  .serv.destaque{grid-template-columns:1fr;text-align:center}
+  .ugc-stats{justify-content:center}
+  .nav-links{
+    display:none;position:absolute;top:72px;left:0;right:0;
+    flex-direction:column;background:var(--creme);padding:24px;gap:18px;
+    border-bottom:1px solid var(--creme-3);
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+}
+@media(max-width:560px){
+  section{padding:68px 0}
+  .port-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#topo" class="brand"><img src="assets/logo-selo.png" alt="surta marketing">surta</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#manifesto">manifesto</a>
+      <a href="#servicos">serviços</a>
+      <a href="#portfolio">trabalhos</a>
+      <a href="#contato" class="btn">bora surtar</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">marketing com menos filtro, mais propósito</span>
+      <h1>a gente <em>surta</em> pra sua marca não passar batida.</h1>
+      <p class="lead">Estratégia que pensa, conteúdo que para o dedo. Marketing feito por gente que ama o que faz — e que não tem medo de mostrar a língua pro óbvio.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn">quero surtar junto</a>
+        <a href="#servicos" class="btn btn-terra">ver o que a gente faz</a>
+      </div>
+      <div class="tags">
+        <span class="tag">UGC</span>
+        <span class="tag">gestão de redes</span>
+        <span class="tag">campanhas</span>
+        <span class="tag">estratégia</span>
+        <span class="tag">conteúdo</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <img src="assets/logo-selo.png" alt="surta marketing — logo">
+    </div>
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>conteúdo que para o dedo</span><span>marca que gruda</span><span>estratégia sem mimimi</span><span>UGC de verdade</span><span>presença que vende</span>
+    <span>conteúdo que para o dedo</span><span>marca que gruda</span><span>estratégia sem mimimi</span><span>UGC de verdade</span><span>presença que vende</span>
+  </div>
+</div>
+
+<!-- ===== MANIFESTO ===== -->
+<section class="manifesto reveal" id="manifesto">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">por que a gente existe</span>
+      <h2>Marketing não precisa ser sério pra ser levado a sério.</h2>
+      <p>A surta nasceu pra fazer marketing que tem cara, voz e verdade. A gente acredita que marca que arrisca é marca que gruda — e que dá, sim, pra ser estratégica sem ser sem graça. Aqui o seu negócio é levado muito a sério; o engessado é que a gente deixa de fora.</p>
+    </div>
+    <div class="manifesto-grid">
+      <div class="pilar">
+        <div class="ico">🎯</div>
+        <h3>nossa missão</h3>
+        <p>Botar a sua marca no mapa com conteúdo que une estratégia e personalidade — do plano à publicação. Cada post com propósito, cada campanha com resultado.</p>
+      </div>
+      <div class="pilar">
+        <div class="ico">🔭</div>
+        <h3>nossa meta</h3>
+        <p>Ser a parceira que entende de gente, de algoritmo e de estratégia ao mesmo tempo — e que faz a sua marca parecer gente de verdade, não folheto.</p>
+      </div>
+      <div class="pilar">
+        <div class="ico">⚡</div>
+        <h3>nosso jeito</h3>
+        <p>Ousadia com método. A gente surta na criação e é cirúrgica no planejamento. Criatividade sustentada por dado — porque gênio também faz a lição de casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATEMENT ===== -->
+<section class="statement reveal">
+  <div class="wrap">
+    <p>a gente leva o seu resultado <em>muito</em> a sério. pro resto, a gente mostra a língua.</p>
+  </div>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section class="reveal" id="servicos">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">o que a gente entrega</span>
+      <h2>Serviços que tiram a sua marca do automático.</h2>
+      <p>Cada serviço resolve uma dor real. Aqui não tem pacote genérico — tem trabalho pensado pra onde a sua marca quer chegar.</p>
+    </div>
+
+    <div class="serv-grid">
+
+      <!-- DESTAQUE UGC -->
+      <div class="serv destaque">
+        <div>
+          <span class="num">★ carro-chefe</span>
+          <h3>UGC — conteúdo que parece de gente, porque é gente.</h3>
+          <p>Sou eu na frente da câmera: Gabi, 32 anos, mineira e sem filtro. UGC é o conteúdo que não parece propaganda — parece a amiga te indicando algo bom. É o vídeo que prende até o fim porque tem verdade, humor e naturalidade. A sua marca na voz de quem o público já confia e quer ouvir.</p>
+          <div class="ugc-stats">
+            <div><b>autêntico</b><small>rosto e voz reais</small></div>
+            <div><b>nativo</b><small>feito pra cada rede</small></div>
+            <div><b>que converte</b><small>conteúdo com intenção</small></div>
+          </div>
+        </div>
+        <div class="ugc-face" style="padding:0;border:none;background:none">
+          <img src="assets/gabi-retrato.jpg" alt="Gabi — criadora de UGC da surta" style="width:100%;height:100%;object-fit:cover;border-radius:18px">
+        </div>
+      </div>
+
+      <div class="serv">
+        <span class="num">01</span>
+        <h3>Gerenciamento de redes sociais</h3>
+        <p>Sua marca presente, consistente e com voz própria — todo dia. Cuido da rotina das suas redes pra que você ganhe presença sem perder o sono: o que postar, quando postar e como responder. Porque marca que some, é marca que é esquecida.</p>
+      </div>
+
+      <div class="serv">
+        <span class="num">02</span>
+        <h3>Desenvolvimento de campanha</h3>
+        <p>Da ideia ao "no ar". Crio campanhas com começo, meio e objetivo — conceito, peças e mensagem amarrados numa narrativa que faz a sua marca ser lembrada. Campanha não é post solto: é história contada de propósito.</p>
+      </div>
+
+      <div class="serv">
+        <span class="num">03</span>
+        <h3>Calendário editorial</h3>
+        <p>Adeus, "o que eu posto hoje?". Monto um planejamento de conteúdo organizado por data, tema e formato, pra que nada saia no improviso. Consistência é o que separa a marca que cresce da que posta quando lembra.</p>
+      </div>
+
+      <div class="serv">
+        <span class="num">04</span>
+        <h3>Planejamento estratégico</h3>
+        <p>Antes de criar, a gente pensa. Defino objetivos, público, posicionamento e o caminho até o resultado. É a bússola que faz cada ação ter sentido — porque criatividade sem estratégia é só barulho bonito.</p>
+      </div>
+
+      <div class="serv">
+        <span class="num">05</span>
+        <h3>Análise de perfil</h3>
+        <p>Um raio-x honesto da sua presença digital. Olho o que está funcionando, o que está travando e onde mora a oportunidade. Diagnóstico claro pra decisão certa — sem achismo, com dado.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTFOLIO ===== -->
+<section class="reveal" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">trabalhos &amp; cases</span>
+      <h2>Um pouco do que já saiu daqui.</h2>
+      <p>Cada projeto começa com uma pergunta: o que essa marca precisa que ninguém ainda entregou? A resposta vira conteúdo.</p>
+    </div>
+    <div class="port-grid">
+      <div class="port-item"><small>UGC</small><h3>Projeto em breve</h3></div>
+      <div class="port-item"><small>campanha</small><h3>Projeto em breve</h3></div>
+      <div class="port-item"><small>social media</small><h3>Projeto em breve</h3></div>
+      <div class="port-item"><small>estratégia</small><h3>Projeto em breve</h3></div>
+      <div class="port-item"><small>conteúdo</small><h3>Projeto em breve</h3></div>
+      <div class="port-item"><small>UGC</small><h3>Projeto em breve</h3></div>
+    </div>
+    <p class="port-note">✦ Tem case novo saindo do forno. Quer ser o próximo? <a href="#contato" style="color:var(--terracota);font-weight:600">bora surtar junto</a>.</p>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS (oculto até ter feedbacks reais — remover style="display:none" para reativar) ===== -->
+<section class="depo reveal" id="depoimentos" style="display:none">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">feedback de quem surtou junto</span>
+      <h2>Não acredita? Quem trabalhou com a gente fala.</h2>
+    </div>
+    <div class="depo-grid">
+      <div class="card-depo">
+        <span class="quote">&ldquo;</span>
+        <p>Espaço reservado para o depoimento real de um cliente. Conte aqui o resultado que a marca dele teve trabalhando com a surta.</p>
+        <div class="who"><div class="av">C</div><div><b>Nome do cliente</b><small>marca / segmento</small></div></div>
+      </div>
+      <div class="card-depo">
+        <span class="quote">&ldquo;</span>
+        <p>Espaço reservado para mais um feedback. Depoimento curto, com nome e o que mudou na presença digital da marca.</p>
+        <div class="who"><div class="av">M</div><div><b>Nome do cliente</b><small>marca / segmento</small></div></div>
+      </div>
+      <div class="card-depo">
+        <span class="quote">&ldquo;</span>
+        <p>Espaço reservado para o terceiro depoimento. Provas sociais reais valem mais que qualquer promessa.</p>
+        <div class="who"><div class="av">S</div><div><b>Nome do cliente</b><small>marca / segmento</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA / CONTATO ===== -->
+<section class="cta reveal" id="contato">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--creme)">vamos nessa</span>
+    <h2>Bora fazer a sua marca surtar?</h2>
+    <p>Conta pra gente o que você quer alcançar. A gente cuida do resto — da estratégia ao conteúdo que faz as pessoas pararem pra olhar.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/5531991264920" class="btn">chamar no WhatsApp</a>
+      <a href="https://instagram.com/surta.marketing" class="btn btn-ghost">ver no Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="assets/logo-selo.png" alt="surta marketing">surta marketing</div>
+        <p style="margin-top:14px;max-width:34ch;color:rgba(242,236,223,.7)">A gente surta pela sua marca. Conteúdo, estratégia e UGC com personalidade.</p>
+      </div>
+      <div class="foot-social">
+        <a href="https://instagram.com/surta.marketing">Instagram</a>
+        <a href="https://wa.me/5531991264920">WhatsApp</a>
+        <a href="mailto:Contato@gasocial.com.br">Contato@gasocial.com.br</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 surta marketing · agenciasurta.com.br</span>
+      <span>feito com surto e estratégia.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// menu mobile
+const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+t.addEventListener('click',()=>l.classList.toggle('open'));
+l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')));
+
+// reveal on scroll (com fallback: nunca deixa conteúdo escondido)
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  reveals.forEach(el=>io.observe(el));
+  // rede de segurança: se algo não disparar em 2.5s, revela mesmo assim
+  setTimeout(()=>reveals.forEach(el=>el.classList.add('in')),2500);
+}else{
+  reveals.forEach(el=>el.classList.add('in'));
+}
+</script>
+</body>
+</html>
